@@ -32,5 +32,4 @@ const handleError = () => {
   document.body.appendChild(message);
 };
 
-promise1.then(handleSuccess).catch(handleError);
-promise2.then(handleSuccess).catch(handleError);
+Promise.race([promise1, promise2]).then(handleSuccess).catch(handleError);
